@@ -1,0 +1,35 @@
+curl --location 'https://ai-proxy.lab.epam.com/openai/deployments/gpt-4o/chat/completions' \
+--header "Api-Key: $DIAL_API_KEY" \
+--header 'Content-Type: application/json' \
+--data '{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a haiku writer."
+        },
+        {
+            "role": "user",
+            "content": "About recursion in programming."
+        }
+    ],
+  "stream": false
+}'
+
+curl --location 'https://ai-proxy.lab.epam.com/openai/deployments/gpt-4o/chat/completions' \
+--header "Api-Key: $DIAL_API_KEY" \
+--header 'Content-Type: application/json' \
+--data '{
+    "messages": [
+        {
+            "role": "system",
+            "content": "You are a haiku writer."
+        },
+        {
+            "role": "user",
+            "content": "About recursion in programming."
+        }
+    ],
+  "stream": true
+}'
+
+curl -s "https://ai-proxy.lab.epam.com/openai/models" -H "Api-Key: $DIAL_API_KEY"
